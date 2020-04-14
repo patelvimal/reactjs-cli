@@ -2,7 +2,7 @@
 
 const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-
+const resolve = require('resolve');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 
@@ -41,6 +41,14 @@ module.exports = {
                 },
                 test: /\.jsx?$/,
                 exclude: /node_modules/ //excludes node_modules folder from being transpiled by babel. We do this because it's a waste of resources to do so.
+            },
+            {
+                test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/],
+                loader: require.resolve('url-loader'),
+                options: {
+                  limit: '10000',
+                  name: 'static/media/[name].[hash:8].[ext]',
+                },
             },
             {
                 test: /\.(scss|sass|css)$/,
