@@ -4,6 +4,7 @@ const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = {
     entry: {
@@ -15,7 +16,20 @@ module.exports = {
     },
     output: {
         path: path.resolve(__dirname, "./dist"),
-        filename: 'js/bundle.js'
+        filename: 'js/site.[contenthash:8].js',
+        chunkFilename: 'js/site.[contenthash:8].chunk.js',
+    },
+    optimization: {
+        minimizer: [
+          new TerserPlugin({
+            sourceMap: true, // Must be set to true if using source-maps in production
+            terserOptions: {
+              compress: {
+                drop_console: true,
+              },
+            },
+          }),
+        ],
     },
     module: {
         rules: [
@@ -54,8 +68,8 @@ module.exports = {
            filename: './index.html'
         }),
         new MiniCssExtractPlugin({
-            filename: 'css/site.css',
-            chunkFilename: '[id].css' ,
+            filename: 'css/site.contenthash:8].css',
+            chunkFilename: 'css/site.[contenthash:8].chunk.css' ,
         })
     ],
 }
