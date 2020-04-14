@@ -12,8 +12,10 @@ module.exports = {
     },
     //mode: 'production',
     devServer:{
-        port:3000
+        port:3000,
+        stats: 'errors-only'
     },
+    stats: 'errors-only',
     output: {
         path: path.resolve(__dirname, "./dist"),
         filename: 'js/site.[contenthash:8].js',
