@@ -1,15 +1,15 @@
 #!/usr/bin/env node
 var figlet = require('figlet');
+const chalk = require("chalk");
+const program = require('commander');
 
-figlet('ReactJS-Cli',{
-    font: 'doom',
-    horizontalLayout: 'universal smushing',
-    verticalLayout: 'universal smushing'
-}, function(err, data) {
-    if (err) {
-        console.log('Something went wrong...');
-        console.dir(err);
-        return;
-    }
-    console.log(data)
-});
+console.log(chalk.yellow(figlet.textSync('reactjs-cli', { horizontalLayout: 'full' })));
+program
+  .version('0.0.1')
+  .description("An example CLI for ordering pizza's")
+  .option('-p, --peppers', 'Add peppers')
+  .option('-P, --pineapple', 'Add pineapple')
+  .option('-b, --bbq', 'Add bbq sauce')
+  .option('-c, --cheese <type>', 'Add the specified type of cheese [marble]')
+  .option('-C, --no-cheese', 'You do not want any cheese')
+  .parse(process.argv);
