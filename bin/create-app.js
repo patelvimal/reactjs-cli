@@ -1,8 +1,15 @@
 #!/usr/bin/env node
+var figlet = require('figlet');
 
-// module.exports = () => {
-//     const args = minimist(process.argv.slice(2))
-//     console.log(args)
-// }
-
-console.log(args)
+figlet('ReactJS-Cli',{
+    font: 'doom',
+    horizontalLayout: 'universal smushing',
+    verticalLayout: 'universal smushing'
+}, function(err, data) {
+    if (err) {
+        console.log('Something went wrong...');
+        console.dir(err);
+        return;
+    }
+    console.log(data)
+});

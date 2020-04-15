@@ -2,9 +2,9 @@
   "name": "reactjs-cli",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "./bin/create-app",
   "bin": {
-    "@patelvimal/reactjs-cli": "bin/react-app",
+    "@patelvimal/reactjs-cli": "./bin/react-app",
     "reactjs-cli": "bin/react-app"
   },
   "scripts": {
@@ -23,6 +23,7 @@
   "homepage": "https://github.com/patelvimal/reactjs-cli#readme",
   "dependencies": {
     "chalk": "^4.0.0",
+    "figlet": "^1.3.0",
     "inquirer": "^7.1.0",
     "ora": "^4.0.3"
   }
