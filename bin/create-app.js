@@ -2,6 +2,7 @@
 var figlet = require('figlet');
 const chalk = require("chalk");
 const program = require('commander');
+const app = require('../lib/app/app');
 
 console.log(chalk.yellow(figlet.textSync('reactjs-cli', { horizontalLayout: 'full' })));
 console.log(chalk.whiteBright.bgRedBright('A CLI for creating react project/components'));
@@ -39,5 +40,5 @@ program.parse(process.argv);
 
 
 function createApp(name){
-  console.log(name);
+  app.createApp(name);
 }
