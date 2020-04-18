@@ -5,10 +5,10 @@ const program = require('commander');
 const app = require('../lib/app/app');
 
 console.log(chalk.yellow(figlet.textSync('reactjs-cli', { horizontalLayout: 'full' })));
-console.log(chalk.whiteBright('A CLI for creating react project/components'));
+//console.log(chalk.whiteBright('A CLI for creating react project/components'));
 
 //const version = chalk.whiteBright('version:- 1.0.0');
-console.log(version);
+//console.log(version);
 
 const helpText = `
     How to Use:-
@@ -24,10 +24,10 @@ const helpText = `
 
 program
   .version('1.0.0')
-  .description('React-js CLI Tool');
+  .description('A CLI for creating react project/components');
 
 program
-  .option('-a, --application', 'Add Application')
+  //.option('-a, --application', 'Add Application')
   .command('new <name>')
   //.alias('-a')
   .description('Create a new React Application')
