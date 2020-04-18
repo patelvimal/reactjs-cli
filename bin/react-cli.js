@@ -4,7 +4,7 @@ const chalk = require("chalk");
 const program = require('commander');
 const app = require('../lib/app/app');
 
-console.log(chalk.yellow(figlet.textSync('reactjs-cli', { horizontalLayout: 'full' })));
+console.log(chalk.yellow(figlet.textSync('reactApp-cli', { horizontalLayout: 'full' })));
 //console.log(chalk.whiteBright('A CLI for creating react project/components'));
 
 //const version = chalk.whiteBright('version:- 1.0.0');
