@@ -3,11 +3,14 @@ var figlet = require('figlet');
 const chalk = require("chalk");
 const program = require('commander');
 const app = require('../lib/app/app');
+const appComponent = require('../lib/components/component');
 const version = require('../lib/version');
 
-console.log(chalk.yellow(figlet.textSync('reactApp-cli', { horizontalLayout: 'full' })));
-console.log(chalk.yellow('A CLI for creating react project/components.'));
-console.log('');
+if (process.argv && process.argv.length === 2) {
+  console.log(chalk.yellow(figlet.textSync('reactApp-cli', { horizontalLayout: 'full' })));
+  console.log(chalk.yellow('A CLI for creating react project/components.'));
+  console.log('');
+}
 
 program
   .option('-v, --version', 'output the version number', version)
@@ -36,5 +39,5 @@ function createApp(name){
 }
 
 function addComponent(name){
-  app.createComponent(name);
+  appComponent.createComponent(name);
 }
