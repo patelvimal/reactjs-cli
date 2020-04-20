@@ -26,10 +26,12 @@ program
 });
 
 program
-  .command('add <name>')
+  .command('add <name1> [name2...]')
+  //.option('-c, --component <name1> [name2]', 'Add new component')
   .description('Add a new component into React Application')
-  .action((name) => {
-    addComponent(name);
+  .action((c1,c2) => {
+    c2.unshift(c1);
+    addComponent(c2);
 });
 
 program.parse(process.argv);
@@ -38,6 +40,6 @@ function createApp(name){
   app.createApp(name);
 }
 
-function addComponent(name){
-  appComponent.createComponent(name);
+function addComponent(components){
+  appComponent.createComponent(components);
 }
