@@ -27,11 +27,11 @@ program
 
 program
   .command('add <name1> [name2...]')
-  //.option('-c, --component <name1> [name2]', 'Add new component')
+  .option('-fn, --folderName <name>', 'Add new component')
   .description('Add a new component into React Application')
-  .action((c1,c2) => {
+  .action((c1,c2,options) => {
     c2.unshift(c1);
-    addComponent(c2);
+    addComponent(c2,options.folderName);
 });
 
 program.parse(process.argv);
@@ -40,6 +40,6 @@ function createApp(name){
   app.createApp(name);
 }
 
-function addComponent(components){
-  appComponent.createComponent(components);
+function addComponent(components,folderName){
+  appComponent.createComponent(components,folderName);
 }
