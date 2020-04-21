@@ -27,7 +27,7 @@ program
 
 program
   .command('add <name1> [name2...]')
-  .option('-fn, --folderName <name>', 'Add new component')
+  .option('-fn, --folderName <name>', 'Add component into a particular folder e.g. -fn folderName')
   .description('Add a new component into React Application')
   .action((c1,c2,options) => {
     c2.unshift(c1);
