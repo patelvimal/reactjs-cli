@@ -8,7 +8,7 @@ const version = require('../lib/version');
 
 if (process.argv && process.argv.length === 2) {
   console.log(chalk.yellow(figlet.textSync('reactApp-cli', { horizontalLayout: 'full' })));
-  console.log(chalk.yellow('A CLI for creating react project/components.'));
+  console.log(chalk.yellow(' A CLI for creating react project/components.'));
   console.log('');
 }
 

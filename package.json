@@ -12,7 +12,11 @@
     "type": "git",
     "url": "git+https://github.com/patelvimal/reactjs-cli.git"
   },
-  "keywords": ["react", "cli", "reactjs"],
+  "keywords": [
+    "react",
+    "cli",
+    "reactjs"
+  ],
   "author": "",
   "license": "ISC",
   "bugs": {
