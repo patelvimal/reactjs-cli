@@ -1,9 +1,9 @@
 {
-  "name": "@vimalpatel/react-cli",
-  "version": "1.0.0",
+  "name": "react-cli-app",
+  "version": "1.0.1",
   "description": "",
   "bin": {
-    "react-cli": "./bin/react-cli.js"
+    "react-cli-app": "./bin/react-cli.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -34,5 +34,8 @@
   "files": [
     "lib",
     "bin"
-  ]
+  ],
+  "publishConfig": {
+    "access": "public"
+  }
 }
